@@ -25,6 +25,7 @@ def BFSList(AList,start_vertex):
     
     q = Queue()    
     visited[start_vertex] = True
+    visited[4] = True
     q.enqueue(start_vertex)
     
     while(not q.isempty()):
@@ -66,5 +67,7 @@ def Components(AList):
     return(component)
 
 
-AList = {0: [1], 1: [2], 2: [0], 3: [4, 6], 4: [3, 7], 5: [3, 7], 6: [5], 7: [4, 8], 8: [5, 9], 9: [8]}
+# AList = {0: [1], 1: [2], 2: [0], 3: [4, 6], 4: [3, 7], 5: [3, 7], 6: [5], 7: [4, 8], 8: [5, 9], 9: [8]}
+AList = {0: [1,2,3], 5: [6], 2: [1,5,4], 6: [4], 1: [6,3], 3: [4]}
+
 print(Components(AList))

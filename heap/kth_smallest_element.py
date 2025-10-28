@@ -1,13 +1,4 @@
-
-'''
-Here we will not sort the entire array/heap for each itteration
-Instead we will create heap of k items and n times we will sort only k items
-so N X logK complexity
-'''
-
-
-# ---------------- HEAP IMPLEMENTATION ---------------- #
-class MaxHeap:
+class Heap:
 
     def __init__(self):
         self.arr = []
@@ -17,73 +8,64 @@ class MaxHeap:
 
     def max(self):
         return self.arr[0] if self.arr else None
+    
+    def heapify(self):
+        length = len(self.arr)
+        i = length
 
-    def heapify_down(self, i):
-        n = len(self.arr)
-        while True:
-            largest = i
-            left, right = 2 * i + 1, 2 * i + 2
-            if left < n and self.arr[left] > self.arr[largest]:
-                largest = left
-            if right < n and self.arr[right] > self.arr[largest]:
-                largest = right
-            if largest != i:
-                self.arr[i], self.arr[largest] = self.arr[largest], self.arr[i]
-                i = largest
-            else:
-                break
-
-    def heapify_up(self):
-        i = len(self.arr) - 1
-        print(self.arr)
         while i > 0:
-            parent = (i - 1) // 2
-            if self.arr[i] > self.arr[parent]:
-                print(self.arr[i], self.arr[parent])
-                self.arr[i], self.arr[parent] = self.arr[parent], self.arr[i]
+            parent = (i-1) // 2
+            if arr[parent] < arr[i]:
+                arr[parent],arr[i] = arr[i],arr[parent]
+
                 i = parent
             else:
                 break
 
-    def insert(self, x):
-        self.arr.append(x)
-        self.heapify_up()
 
-    def replace_max(self, x):
-        if not self.arr:
-            return None
-        max_val = self.arr[0]
-        self.arr[0] = x
-        self.heapify_down(0)
-        return max_val
+    def insert(self,element):
+        self.arr.append(element)
+        self.heapify()
+
+    def heapifyDown(self,m):
+        while True:
+            child_l = (m*2)+1
+            child_r = (m*2)+2
+            largest = m
+            if child_l and self.arr[child_l] > self.arr[largest]:
+                largest = child_l
+
+            if child_r and self.arr[child_r] > self.arr[largest]:
+                largest = child_r
+            
+            if largest != m:
+                self.arr[largest], self.arr[m] = self.arr[m], self.arr[largest]
+                i = largest
+            else:
+                break
 
 
-def kmin_greater_than(arr, k, num):
-    """Return True if the kth smallest element is >= num."""
-    if k > len(arr):
-        return False
-
-    heap = MaxHeap()
+def kminfunc(arr, k, num):
+    heap = Heap()
+    
+    # Create first heap of k elements
     for i in range(k):
-        heap.insert(arr[i])
+        heap.arr.append(i)
+        heap.insert(i)
 
-    for i in range(k, len(arr)):
-        if arr[i] < heap.max():
-            heap.replace_max(arr[i])
+    # iterate over remaining elements
+    for i in range(k, len(arr)-1):
+        if heap.arr[0] < arr[i]:
+            heap.arr[0], arr[i] = arr[i],heap.arr[0]
+            heap.heapifyDown(0)
 
-    return heap.max() >= num
+    return(heap.max() > num)
 
 
 
-
-# ---------------- MAIN MENU ---------------- #
 if __name__ == "__main__":
-
-      arr = [6,5,4,3,7,1,9]
-      k = 3
-      num = 40
-      result = kmin_greater_than(arr, k, num)
-      if result:
-          print("True")
-      else:
-          print("False")
+    arr = [6,5,4,3,7,1,9]
+    k = 2
+    num = 20
+    result = kminfunc(arr, k, num)
+    print(result)

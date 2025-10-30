@@ -1,5 +1,5 @@
 #Check how many platforms are require for given trains
-
+# Q - There is aschedule of trains and we need to build a platforms on station so that no train will wait
 from datetime import time
 
 def minimum_platform(train_list):

@@ -14,5 +14,6 @@ def MoM(L): # Median of medians
     X = L[i:i+5]
     X.sort()
     M.append(X[len(X)//2])
+    print(f"medians - {X}")
   return(MoM(M))
 print(MoM([4,3,5,6,2,1,8,9,7,10,13,15,18,17,11]))

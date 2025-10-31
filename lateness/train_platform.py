@@ -41,7 +41,6 @@ def minimum_platform(train_list):
                     else:
                         break
                 
-            # break
         if new_require:
             platforms.append({key:end_time[key]})
 

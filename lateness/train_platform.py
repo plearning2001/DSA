@@ -18,8 +18,14 @@ def minimum_platform(train_list):
         start_time[l] = time(start_h,start_m)
         end_time[l] = time(end_h,end_m)
 
+        print(f"start_times -- {start_time}")
+        print(f"end_times -- {end_time}")
+        # print(f"platforms -- {platforms}")
+
+
 
     for key in trains_schedule_dict.keys():
+        print(f"platforms -- {platforms}")
         new_require = True
         done = False
         for pl in platforms:
@@ -32,7 +38,7 @@ def minimum_platform(train_list):
                 break
             else:
                 for k,v in pl.items():
-                    if end_time[k]<start_time[key]:
+                    if end_time[k]<=start_time[key]:
                         pl.pop(k)
                         pl[key] = end_time[key]
                         new_require = False
@@ -51,9 +57,8 @@ def minimum_platform(train_list):
 
 
 if __name__ == "__main__":
-    train_list = [
-        (1,'9:00','9:10'),(2,'9:40','12:00'),(3,'9:50','11:20'),(4,'11:00','11:30'),(5,'11:40','12:10'),(6,'12:05','19:00'),(7,'12:06','13:00'),(8,'13:05','14:00'),(9,'14:05','15:00'),(10,'18:00','20:00')
-    ]
-    print(minimum_platform(train_list)) 
+    train_list = [(1,'09:00','13:10'),(2,'09:40','12:00'),(3,'09:50','12:20'),(4,'11:00','11:50'),(5,'11:40','12:10')]
+
+    print(f"Total platforms -- {minimum_platform(train_list)}") 
 
 

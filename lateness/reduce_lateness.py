@@ -19,12 +19,13 @@ def total_delay(sorted_jobs):
 
 def minimize_lateness(jobs,N):
 
-    sorted_jobs = sorted(jobs,key=itemgetter(2))
+    sorted_jobs = sorted(jobs,key=itemgetter(1))
     
     for t in range(len(sorted_jobs)-1):
         if (sorted_jobs[t][2] == sorted_jobs[t+1][2]) and (sorted_jobs[t][1] > sorted_jobs[t+1][1]) :
             sorted_jobs[t],sorted_jobs[t+1] = sorted_jobs[t+1],sorted_jobs[t]
-
+    #Delay with sort by process time
+    old_delay_test = total_delay(sorted_jobs)
 
     buffer_data = {}
     visited_jobs = {}
@@ -39,10 +40,12 @@ def minimize_lateness(jobs,N):
         sorted_jobs[t],sorted_jobs[t+1] = sorted_jobs[t+1],sorted_jobs[t]
 
         new_delay = total_delay(sorted_jobs)
+        # new_delay = 137
         if new_delay > old_delay:
             sorted_jobs[t+1],sorted_jobs[t] = sorted_jobs[t],sorted_jobs[t+1]
         else:
             old_delay = new_delay
+            # old_delay = 137
 
 
     return(max_delay,old_delay,sorted_jobs)
@@ -68,3 +71,4 @@ if __name__ == "__main__":
     print(f"min_delay -- {min_delay}")
     print(f"final_job_list -- {final_job_list}")
 
+ 

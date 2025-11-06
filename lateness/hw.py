@@ -1,4 +1,8 @@
 
+'''
+Added buffer to current tasks to check how delay get affect
+'''
+
 def check_completed_line(job,usedtime):
     job = job
     usedtime = usedtime
@@ -38,7 +42,7 @@ def minimizeLateness(N, jobs):
             buf2=buf2
         delay = delay+buf2
         i += 1
-    print(f"Total-delay with 50% buffer -- {delay}")
+    print(f"Total-delay with No buffer -- {delay}")
     sum = 0
     for k in range(len(sortedL)):
         buf = (sortedL[k][1] - sortedL[k][2])
@@ -64,6 +68,6 @@ jobs_old = [
 N = 11
 jobs = []
 for p,q,r in jobs_old:
-    jobs.append((p,q*2,r))
+    jobs.append((p,q,r))
     
 print(minimizeLateness(N, jobs))

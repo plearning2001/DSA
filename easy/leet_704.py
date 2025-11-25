@@ -17,6 +17,6 @@ while left <= right:
         else:
             right = middle-1
 if target == data[right]:
-    print right
+    print (right)
 
 print -1

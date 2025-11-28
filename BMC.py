@@ -18,9 +18,17 @@ def get_positive_patients(threashold,prob_isolate_map):
             positives += 1
     return positives
 
+def get_negative_patients(threashold,prob_isolate_map,actual_values):
+    # TN
+    negatives = 0
+    for i in prob_isolate_map.keys():
+        if (threashold > prob_isolate_map[i]) and actual_values[i]:
+            negatives += 1
+    return negatives
+
 prob_isolate = [0.931,0.646,0.982,0.690,0.269,0.957,0.668]
-threashold = 0.3
-bed_capacity = 6
+threashold = 0.6
+bed_capacity = 1
 
 prob_isolate_map = {
     "a":0.931,
@@ -40,22 +48,21 @@ actual_values = {
     "f":1,
     "g":1
 }
-TP = 0
-TN = 0
-FP = 0
-FN = 0
-predicted_values = {}
-
 
 old_threashold = None
 while True:
     positive_patients = get_positive_patients(threashold,prob_isolate_map)
+    negative_patients = get_negative_patients(threashold,prob_isolate_map,actual_values)
     
-    if bed_capacity<positive_patients:
+    if negative_patients > 0:
+        print(f"!!! Need to pay attention !!!")
+        break
+
+    if bed_capacity<=positive_patients:
         if old_threashold:
-            print(f"Minimum threashould should be -- {old_threashold}.")
+            print(f"Minimum threashould should be -- {old_threashold} for bed capacity {bed_capacity}.")
         else:
-            print(f"Threashold {threashold} is very high.")
+            print(f"Threashold {threashold} is too low.")
         break
     old_threashold = threashold
     threashold = round(old_threashold - 0.1,1)

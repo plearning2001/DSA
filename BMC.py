@@ -1,3 +1,6 @@
+import numpy as np
+def sigmoid(z):
+    return 1 / (1 + np.exp(-z))
 '''
         if actual_values[i] and predicted_values[i]:
             TP += 1
@@ -27,8 +30,8 @@ def get_negative_patients(threashold,prob_isolate_map,actual_values):
     return negatives
 
 prob_isolate = [0.931,0.646,0.982,0.690,0.269,0.957,0.668]
-threashold = 0.6
-bed_capacity = 1
+threashold = 0.65
+bed_capacity = 6
 
 prob_isolate_map = {
     "a":0.931,

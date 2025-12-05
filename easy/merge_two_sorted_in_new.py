@@ -23,8 +23,15 @@ while i<len_a or j<len_b:
     if a[i]<b[j]:
         c.append(a[i])
         i+=1
+    elif a[i]>b[j]:
+        c.append(b[j])
+        j+=1
+    
+    
+    #Remove duplicates
     else:
         c.append(b[j])
         j+=1
+        i+=1
 
 print(c)

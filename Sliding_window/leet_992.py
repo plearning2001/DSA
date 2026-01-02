@@ -22,6 +22,7 @@ def count_at_most(k,nums):
                 del counter[nums[left]]
             left += 1
         
+        # all with new element, after adding new element
         at_most_k = at_most_k + (right - left + 1)
     
     return at_most_k

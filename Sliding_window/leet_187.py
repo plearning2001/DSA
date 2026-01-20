@@ -7,7 +7,6 @@ k = 10
 end_i = len(s)-k + 1
 
 for i in range(0,end_i):
-    # print(s[i:i+10])
     seq = s[i:i+10]
     if seq in repeated_set.keys():
         repeated_set[seq] = repeated_set[seq] +1

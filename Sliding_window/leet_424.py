@@ -1,5 +1,5 @@
 s = "AABABBA"
-k = 1
+k = 2
 
 left = 0
 freq = {}

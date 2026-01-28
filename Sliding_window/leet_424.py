@@ -15,5 +15,6 @@ for right in range(len(s)):
         freq[s[left]] -= 1
         left += 1
 
+    # *** Complete length bcz it's consider variables which have replaced
     max_lenth = max(max_lenth,right-left+1)
 print(max_lenth)

@@ -10,6 +10,7 @@ k = 1
 
 dict = {}
 target = False
+
 for i in range(len(nums)):
     if nums[i] in dict.keys():
         if i - dict[nums[i]] <= k:

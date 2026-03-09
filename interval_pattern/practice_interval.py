@@ -20,9 +20,17 @@ def intersect(a, b):
     else:
         return None
 
-print(intersect([2, 8], [5, 10]))
-print(intersect([1, 4], [6, 9]))
-print(intersect([1, 7], [3, 5]))
+# print(intersect([2, 8], [5, 10]))
+# print(intersect([1, 4], [6, 9]))
+# print(intersect([1, 7], [3, 5]))
+
+
+def contains(a,b):
+    return a[0] <= b[0] and b[1] <= a[1]
+
+print(contains([12, 23], [15, 17]))
+print(contains([1, 5],   [3, 8]))
+
 
 
 def intersect(a, b):

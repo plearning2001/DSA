@@ -14,7 +14,7 @@ sorted_list = sorted(given_list, key = lambda x: x[0])
 print(sorted_list)
 final_list = [sorted_list[0]]
 
-for data in sorted_list:
+for data in sorted_list[1:]:
     prev =  final_list[-1]
     curr = data
 

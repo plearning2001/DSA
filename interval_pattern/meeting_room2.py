@@ -15,7 +15,6 @@ print(len(new_list))
 '''
 
 
-
 import heapq
 
 def min_meeting_rooms(meetings):

@@ -17,6 +17,7 @@ print(len(new_list))
 
 import heapq
 
+
 def min_meeting_rooms(meetings):
     meetings.sort(key=lambda x: x[0])
     heap = []

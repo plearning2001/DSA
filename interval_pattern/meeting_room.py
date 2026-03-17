@@ -24,7 +24,6 @@ def can_attend_all(meetings):
 
     return True  
 
-
 print(can_attend_all([[9,10],[9,12],[11,13]]))
 print(can_attend_all([[1,3],[4,6],[7,9]]))
 print(can_attend_all([[1,5],[4,8]]))

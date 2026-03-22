@@ -1,0 +1,87 @@
+🎯 Interval Pattern — LeetCode Problem IDs (FAANG Ready!)
+
+## 🟢 Level 1 & 2 — Easy (Warm Up)
+
+| # | Problem ID | Problem Name               | Key Concept                |
+|---|------------|----------------------------|----------------------------|
+| 1 | 252        | Meeting Rooms              | Overlap check              |
+| 2 | 228        | Summary Ranges             | Building intervals         |
+| 3 | 1446       | Consecutive Characters     | Basic interval thinking    |
+| 4 | 2210       | Count Hills and Valleys    | Interval boundaries        |
+
+## 🟡 Level 3 — Medium (Core Problems) ⭐MUST DO⭐
+
+| # | Problem ID | Problem Name                     | Key Concept              |
+|---|------------|----------------------------------|--------------------------|
+| 1 | 56         | Merge Intervals                  | Sort + merge             |
+| 2 | 57         | Insert Interval                  | 3 zones trick            |
+| 3 | 986        | Interval List Intersections      | Two pointers             |
+| 4 | 253        | Meeting Rooms II                 | Min heap                 |
+| 5 | 435        | Non-overlapping Intervals        | Greedy (sort by end)     |
+| 6 | 452        | Minimum Arrows to Burst Balloons | Greedy                   |
+| 7 | 1288       | Remove Covered Intervals         | Contains check           |
+| 8 | 763        | Partition Labels                 | Interval building        |
+
+## 🟠 Level 4 — Medium/Hard (Intermediate) ⭐FAANG Favorite⭐
+
+| # | Problem ID | Problem Name                                    | Key Concept           |
+|---|------------|-------------------------------------------------|-----------------------|
+| 1 | 759        | Employee Free Time                              | Flatten + gaps        |
+| 2 | 715        | Range Module                                    | Interval add/remove   |
+| 3 | 1272       | Remove Interval                                 | Splitting intervals   |
+| 4 | 616        | Add Bold Tag in String                          | Interval merging      |
+| 5 | 1229       | Meeting Scheduler                               | Two pointers + intersect |
+| 6 | 2406       | Divide Intervals Into Minimum Groups            | Sweep line            |
+| 7 | 1851       | Minimum Interval to Include Each Query          | Heap + sorting        |
+
+## 🔴 Level 5 — Hard (FAANG Final Round) 🏆
+
+| # | Problem ID | Problem Name                                   | Key Concept              |
+|---|------------|-----------------------------------------------|--------------------------|
+| 1 | 218        | The Skyline Problem                            | Max heap + events        |
+| 2 | 732        | My Calendar III                                | Sweep line               |
+| 3 | 699        | Falling Squares                                | Interval overlap + height|
+| 4 | 850        | Rectangle Area II                              | Sweep line 2D            |
+| 5 | 2276       | Data Stream as Disjoint Intervals              | TreeMap intervals        |
+| 6 | 352        | Data Stream as Disjoint Intervals              | Dynamic merging          |
+
+## 🎯 FAANG Company-Wise Favorites
+
+- Google: #56, #57, #253, #218, #759
+- Amazon: #56, #252, #253, #435, #986
+- Meta: #56, #57, #986, #763, #732
+- Apple: #56, #252, #435, #1288
+- Netflix: #253, #759, #218, #352
+- Microsoft: #56, #57, #253, #452, #435
+
+
+
+
+Week 1 — Build Foundation (Easy/Medium)
+─────────────────────────────────────
+Day 1: #252, #228          (what is interval)
+Day 2: #56                 (merge intervals — most important!)
+Day 3: #57                 (insert interval)
+Day 4: #435, #452          (greedy removal)
+Day 5: #1288               (contains check)
+Day 6: #986                (two pointer intersect)
+Day 7: Revise all week 1
+
+Week 2 — Level Up (Medium/Hard)
+─────────────────────────────────────
+Day 1: #253                (meeting rooms II — heap!)
+Day 2: #763                (partition labels)
+Day 3: #759                (employee free time)
+Day 4: #1272, #1229        (interval operations)
+Day 5: #2406, #1851        (sweep line)
+Day 6: #715                (range module)
+Day 7: Revise all week 2
+
+Week 3 — FAANG Hard
+─────────────────────────────────────
+Day 1: #218                (skyline — legendary!)
+Day 2: #732                (my calendar III)
+Day 3: #699                (falling squares)
+Day 4: #352                (data stream)
+Day 5: #850                (2D sweep line)
+Day 6-7: Mock interview — pick 2 random problems!

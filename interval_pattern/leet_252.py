@@ -4,7 +4,7 @@ intervals = [(0,30),(5,10),(15,20)]
 if not intervals:
     print(True)
 final_list = []
-sorted_list = sorted(intervals, key=lambda x: x.start)
+sorted_list = sorted(intervals, key=lambda x: x[0])
 
 final_list.append(sorted_list[0])
 status = True
@@ -16,7 +16,7 @@ for l in range(1,len(sorted_list)):
     prev = final_list[len(final_list)-1]
 
 
-    if prev.end<=cur.start:
+    if prev[1]<=cur[0]:
         final_list.append(cur)
         
     else:

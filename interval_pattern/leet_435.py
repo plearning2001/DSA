@@ -1,21 +1,22 @@
+intervals = [[0,2],[1,3],[2,4],[3,5],[4,6]]
 intervals = [[1,100],[11,22],[1,11],[2,12]]
+intervals = [[0,1],[3,4],[1,2]]
 final_list = []
-sorted_list = sorted(intervals, key=lambda x: x[0])
+sorted_list = sorted(intervals, key=lambda x: x[1])
 final_list.append(sorted_list[0])
 removed_intervals = 0
+prev_counter = 0
+prev_end=sorted_list[0][1]
 
 for l in range(1,len(sorted_list)):
 
     cur = sorted_list[l]
-    prev = final_list[-1]
-    if prev[1]>cur[0]:
+    
+    if prev_end>cur[0]:
         removed_intervals += 1    
-        if prev[1]>cur[1]:
-            prev[0] = cur[0]
-            prev[1] = cur[1]
 
     else:
 
-        final_list.append(cur)
+        prev_end = sorted_list[l][1]
 
-print(len(intervals) - len(final_list))
+print(removed_intervals)

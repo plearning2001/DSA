@@ -1,3 +1,38 @@
+# Simple question to decide sorting.
+"Am I processing/scheduling events OR am I keeping/removing intervals?"
+
+
+Processing/Scheduling  →  Sort by START time
+Keeping/Removing       →  Sort by END time
+
+Ask yourself ONE question about the problem:
+
+
+┌─────────────────────────────────────────────────────┐
+│  Am I merging / combining intervals?                │
+│  → Sort by START ✅                                 │
+├─────────────────────────────────────────────────────┤
+│  Am I inserting a new interval into existing list?  │
+│  → Sort by START ✅                                 │
+├─────────────────────────────────────────────────────┤
+│  Am I counting rooms / resources needed?            │
+│  → Sort by START ✅                                 │
+├─────────────────────────────────────────────────────┤
+│  Am I finding intersections between two lists?      │
+│  → Sort by START ✅                                 │
+├─────────────────────────────────────────────────────┤
+│  Am I REMOVING minimum intervals?                   │
+│  → Sort by END ✅                                   │
+├─────────────────────────────────────────────────────┤
+│  Am I KEEPING maximum non-overlapping intervals?    │
+│  → Sort by END ✅                                   │
+├─────────────────────────────────────────────────────┤
+│  Am I shooting arrows / covering intervals?         │
+│  → Sort by END ✅                                   │
+└─────────────────────────────────────────────────────┘
+
+
+
 🎯 Interval Pattern — LeetCode Problem IDs (FAANG Ready!)
 
 ## 🟢 Level 1 & 2 — Easy (Warm Up)
